@@ -187,13 +187,13 @@ void chip8::tick() {
             break;
         }
         case 0x0055: {
-            for (size_t n = 0; n < ((opcode & 0x0F00) >> 8); ++n) {
+            for (size_t n = 0; n <= ((opcode & 0x0F00) >> 8); ++n) {
                 ram[reg_i + n] = reg_v[n];
             }
             break;
         }
         case 0x0065: {
-            for (size_t n = 0; n < ((opcode & 0x0F00) >> 8); ++n) {
+            for (size_t n = 0; n <= ((opcode & 0x0F00) >> 8); ++n) {
                 reg_v[n] = ram[reg_i + n];
             }
             break;
